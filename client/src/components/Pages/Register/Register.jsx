@@ -66,7 +66,7 @@ function Register({ register, msgReg }) {
 				<div className="flex gap-8 pt-4 ">
 					<button
 						disabled={name == "" || pass.length < 4 || !valid}
-						className="cursor-pointer px-6  py-2 rounded border disabled:text-gray-400 disabled:bg-silver-200 transition-bg duration-300 disabled:cursor-not-allowed">
+						className="cursor-pointer px-6  py-2 rounded border disabled:text-silver-100 disabled:bg-silver-200 transition-bg duration-300 disabled:cursor-not-allowed">
 						Register
 					</button>
 					<Link className="underline font-medium cursor-pointer hover:text-midgreen hover:font-medium" to="/Login">Login</Link>

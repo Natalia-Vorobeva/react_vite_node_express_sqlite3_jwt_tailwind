@@ -42,7 +42,7 @@ const Login = ({ login, msg }) => {
 				</div>
 				<div className="flex gap-8 pt-4 ">
 					<button className="cursor-pointer px-6 py-2 border rounded">Login</button>
-					<Link className="underline font-medium cursor-pointer hover:text-blue-500 hover:font-medium" to="/register">Create</Link>
+					<Link className="underline font-medium cursor-pointer hover:text-midgreen hover:font-medium" to="/register">Create</Link>
 				</div>
 			</Form>
 			<p className="text-red-600">{msg}</p>
