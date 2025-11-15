@@ -20,11 +20,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-	@apply bg-[#d3d4d4]
+	@apply bg-silver-200
 }
 ::-webkit-scrollbar-thumb:hover {
 	@apply bg-[#a5a4a4]
 }
 ::-webkit-scrollbar {
-	@apply w-[6px]
+	@apply w-[8px]
 }

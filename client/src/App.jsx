@@ -110,11 +110,19 @@ function App() {
 				console.log('%cDATA', 'color: purple', err)
 			})
 	}
+	const [hidden, setHidden] = useState('')
+
+	const del = (data) => {
+		setTodos(data)
+		setHidden('')
+	}
+
 	const deleteItemTodos = (item) => {
 		api
 			.deleteItem(item.todo_id, item.user_id)
 			.then((res) => {
-				setTodos(res.todos.reverse())
+				setHidden('hidden opacity-0 h-0 transition-opacity duration-2000 ease-in')
+				del(res.todos.reverse())
 			})
 			.catch(err => {
 				console.log(err)
@@ -132,14 +140,15 @@ function App() {
 	}
 
 	return (
-		<div className="w-3/4 h-full mx-auto">
+		<div className="
+		h-full mx-auto bg-gradient-to-b from-metal via-silver-100 to-metal">
 			<Routes>
 				<Route path="/login"
 					element={
 						<Suspense fallback={<Loading />}>
-						<Login setIsAuthenticated={setIsAuthenticated} login
-							={login} msg={msg} />
-							</Suspense>
+							<Login setIsAuthenticated={setIsAuthenticated} login
+								={login} msg={msg} />
+						</Suspense>
 					} />
 				<Route path="/register"
 					element={<Register register={register} msgReg={msgReg} />} />
@@ -156,6 +165,7 @@ function App() {
 									logout={logout}
 									deleteItem={deleteItemTodos}
 									updateItem={updateItemTodos}
+									hidden={hidden}
 								/>
 							</Suspense>
 						} />
